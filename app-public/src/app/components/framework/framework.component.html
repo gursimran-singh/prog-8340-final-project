@@ -1,0 +1,90 @@
+<div id="navigation">
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.png" width="60" height="58" alt="Atom Inc" />
+                <span class="logo_text">Atom Inc.</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="label-toggle"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a routerLink="">Home</a></li>
+                <li><a routerLink="price">Pricing</a></li>
+                <li><a routerLink="blog">Blog</a></li>
+                <li><a routerLink="about">About Us</a></li>
+                <li><a routerLink="contact">Contact Us</a></li>
+                <li class="sign_up"><a routerLink="dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<section id="banner">
+    <div class="container">
+        <header>
+            <h1>Seamless Token Swaps, Anywhere</h1>
+            <p>Atom Inc. is a blockchain-based liquidity protocol that aggregates liquidity from a wide range of
+                reserves,
+                powering instant and secure token exchange in any decentralized application.</p>
+        </header>
+    </div>
+</section>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <div class="container">
+        <div class="card_container">
+            <div>
+                <div>
+                    <a class="logo" href="index.html">
+                        <img src="assets/images/logo.png" width="60" height="58" alt="Atom Inc" />
+                        <span class="logo_text">Atom Inc.</span>
+                    </a>
+                </div>
+                <p>
+                    We started this radical idea that anyone, anywhere, should be able to easily and
+                    securely send and receive Bitcoin. Today, we offer a trusted and easy-to-use platform for
+                    accessing the broader cryptoeconomy.
+                </p>
+            </div>
+            <div>
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="price.html">Pricing</a></li>
+                    <li><a href="transaction.html">Transactions</a></li>
+                    <li><a href="#login.html">Login</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6>Knowledgebase</h6>
+                <ul class="footer-links">
+                    <li><a href="#page.html">Pages</a></li>
+                    <li><a href="#feature.html">Features</a></li>
+                    <li><a href="#blog.html">Blog</a></li>
+                    <li><a href="#forum.html">Community</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6>About Us</h6>
+                <ul class="footer-links">
+                    <li><a href="#about.html">About Us</a></li>
+                    <li><a href="#career.html">Careers</a></li>
+                    <li><a href="#mission.html">Mission</a></li>
+                    <li><a href="#press.html">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="copyright">
+                <p>© 2021 Atom, INC. All rights reserved.</p>
+            </div>
+            <div class="social">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+</footer>
