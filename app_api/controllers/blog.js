@@ -6,8 +6,6 @@ var sendJSONResponse = function (res, status, content) {
     res.json(content);
 };
 
-
-
 const getAllBlogs = function (req, res) {
     blogModel.find().exec(function (err, data) {
         if (err) {
