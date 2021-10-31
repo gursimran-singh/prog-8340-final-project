@@ -28,4 +28,4 @@ const transactionSchema = new mongoose.Schema(
         }
     }
 );
-mongoose.model('transactionsModel',transactionSchema);
+mongoose.model('BitCoins3',transactionSchema, 'transactions');

@@ -26,11 +26,11 @@ const coinsSchema = new mongoose.Schema(
         image:{
             type:String
         },
-        shortName:
+        abbre:
         {
             type:String
         }
 
     }
 );
-mongoose.model('coinsModel',coinsSchema);
+mongoose.model('BitCoins1',coinsSchema, 'Coins');

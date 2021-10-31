@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const transactionsModel = mongoose.model('transactionsModel');
+const transactionsModel = mongoose.model('BitCoins3');
 
 
 const getAllTransactions = function (req, res) {

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema(
     {
-        name:{
+        title:{
             type:String,
             required:true,
             'default':'Blog'
@@ -12,9 +12,13 @@ const blogSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        description:{
+        desc:{
             type:String,
             required:true
+        },
+        author: {
+            type: String, 
+            required: true
         },
         publishedDate:{
             type:Date,
@@ -22,4 +26,4 @@ const blogSchema = new mongoose.Schema(
         }
     }
 );
-mongoose.model('blogModel',blogSchema);
+mongoose.model('BitCoins',blogSchema, 'blogs');

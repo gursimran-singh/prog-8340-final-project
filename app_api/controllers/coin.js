@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const coinsModel = mongoose.model('coinsModel');
-const plansModel = mongoose.model('plansModel');
+const coinsModel = mongoose.model('BitCoins1');
+const plansModel = mongoose.model('BitCoins2');
 
 
 

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+
 const plansSchema = new mongoose.Schema(
     {
         name: {
@@ -9,8 +11,13 @@ const plansSchema = new mongoose.Schema(
             type: Number,
             required:true
         },
-        features:[String]
+        features:{
+            type: Array, 
+            required: true
+        }
 
     }
 );
-mongoose.model('plansModel',plansSchema);
+
+
+mongoose.model('BitCoins2',plansSchema, 'plans');

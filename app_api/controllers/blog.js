@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
-const blogModel = mongoose.model('blogModel');
+const blogModel = mongoose.model('BitCoins');
 
 var sendJSONResponse = function (res, status, content) {
     res.status(status);
     res.json(content);
 };
+
+
 
 const getAllBlogs = function (req, res) {
     blogModel.find().exec(function (err, data) {

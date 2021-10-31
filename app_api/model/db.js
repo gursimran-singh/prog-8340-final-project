@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb+srv://admin:admin@practicecluster.gm4a9.mongodb.net/BitCoins?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://admin:admin@cluster0.7bqec.mongodb.net/BitCoins?retryWrites=true&w=majority';
 mongoose.connect(dbURI);
 
 // connected , error ,diconnected are connection events
