@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -14,8 +15,8 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FrameworkComponent,
+    AppComponent, 
+    FrameworkComponent, 
     HomepageComponent,
     FeaturedComponent,
     FooterBannerComponent
@@ -28,11 +29,18 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
     RouterModule.forRoot([
       {
         path: '',
-        component: HomepageComponent
-      }
-    ])
+        component: FrameworkComponent,
+        children:[
+          {
+            path: '',
+            component: HomepageComponent
+          }
+        ]
+      },
+    ]),
+    AdminModule,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
-  bootstrap: [FrameworkComponent]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
