@@ -9,13 +9,10 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FrameworkComponent,
-    HomepageComponent
-  ],
+  declarations: [AppComponent, FrameworkComponent, HomepageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -24,11 +21,18 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     RouterModule.forRoot([
       {
         path: '',
-        component: HomepageComponent
-      }
-    ])
+        component: FrameworkComponent,
+        children:[
+          {
+            path: '',
+            component: HomepageComponent
+          }
+        ]
+      },
+    ]),
+    AdminModule,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
-  bootstrap: [FrameworkComponent]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
