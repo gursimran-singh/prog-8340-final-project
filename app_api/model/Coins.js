@@ -29,7 +29,12 @@ const coinsSchema = new mongoose.Schema(
         abbre:
         {
             type:String
-        }
+        },
+        isFeatured:
+        {
+            type:Boolean,
+            required:true
+        },
 
     }
 );

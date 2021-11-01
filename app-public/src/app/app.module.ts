@@ -9,12 +9,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { FeaturedComponent } from './components/featured/featured.component';
+import { FooterBannerComponent } from './components/footer-banner/footer-banner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrameworkComponent,
-    HomepageComponent
+    HomepageComponent,
+    FeaturedComponent,
+    FooterBannerComponent
   ],
   imports: [
     BrowserModule,
