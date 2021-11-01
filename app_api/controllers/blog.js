@@ -75,7 +75,7 @@ const updateBlog = function (req, res) {
     } else {
         blogModel.findById(req.params.blogid).exec((err, blogData) => {
             if (!blogData) {
-                sendJSONResponse(res, 404, { message: "coinid not found" });
+                sendJSONResponse(res, 404, { message: "blogid not found" });
             } else if (err) {
                 sendJSONResponse(res, 400, err);
             } else {

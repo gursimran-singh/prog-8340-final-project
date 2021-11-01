@@ -6,13 +6,21 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { AdminModule } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { AdminModule } from './admin/admin.module';
+import { FeaturedComponent } from './components/featured/featured.component';
+import { FooterBannerComponent } from './components/footer-banner/footer-banner.component';
 
 @NgModule({
-  declarations: [AppComponent, FrameworkComponent, HomepageComponent],
+  declarations: [
+    AppComponent, 
+    FrameworkComponent, 
+    HomepageComponent,
+    FeaturedComponent,
+    FooterBannerComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

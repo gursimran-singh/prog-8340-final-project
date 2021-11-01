@@ -2,16 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CoinService } from 'src/app/services/coin.service';
 import { coin } from '../../models/coin';
 
-
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css'],
+  selector: 'app-featured',
+  templateUrl: './featured.component.html',
+  styleUrls: ['./featured.component.css'],
   providers: [CoinService]
 })
-
-export class HomepageComponent implements OnInit {
-
+export class FeaturedComponent implements OnInit {
   coins: coin[] = [];
   constructor(private coinService: CoinService) { }
 
