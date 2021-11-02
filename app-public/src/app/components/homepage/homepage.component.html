@@ -23,13 +23,13 @@
                     <th>7d</th> -->
                     <th>Market Cap</th>
                     <th>Volume</th>
-                    <th>Is Featured</th>
+                    <th>Quantity</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let coin of coins;">
+                <tr *ngFor="let coin of coins; let i = index">
                     <td class="text_left">
-                        <p>1</p>
+                        <p>{{i+1}}</p>
                     </td>
                     <td class="text_left">
                         <i class="cc {{ coin.abbre }}"></i>
@@ -37,10 +37,13 @@
                     </td>
                     <td>${{ coin.price }}</td>
                     <td>${{ coin.maketCap }}</td>
-                    <td>${{ coin.volume }} <p>{{ coin.quantity }} {{ coin.abbre }}</p>
+                    <td>${{ coin.volume }}
                     </td>
-                    <td *ngIf="coin.isFeatured" class="isFeatured"><i class="fa fa-check"></i></td>
-                    <td *ngIf="!coin.isFeatured" class="isNotFeatured"><i class="fa fa-times "></i></td>
+                    <td>
+                        {{ coin.quantity }} {{ coin.abbre }}
+                    </td>
+                    <!-- <td *ngIf="coin.isFeatured" class="isFeatured"><i class="fa fa-check"></i></td>
+                    <td *ngIf="!coin.isFeatured" class="isNotFeatured"><i class="fa fa-times "></i></td> -->
 
                 </tr>
             </tbody>

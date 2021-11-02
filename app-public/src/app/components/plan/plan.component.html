@@ -6,7 +6,20 @@
         <div class="pricing">
             <div *ngFor="let plan of plans">
                 <!-- add active class for one plan -->
-                <div class="item">
+                <div *ngIf="plan.name == 'Optima'" class="item active">
+                    <span class="label">Best match</span>
+                    <div>
+                        <h4 class="title">{{plan.name}}</h4>
+                        <p class="price">{{plan.price}}</p>
+                    </div>
+                    <div class="description">
+                        Aholehole round whitefish bleak pomfret. Wrasse barbel blue triggerfish squaretail,
+                        <!-- -- bind plan features here -->
+                    </div>
+                    <a class="price_btn" routerLink="/transaction">Get Started</a>
+                </div>
+
+                <div *ngIf="plan.name != 'Optima'" class=" item">
                     <div>
                         <h4 class="title">{{plan.name}}</h4>
                         <p class="price">{{plan.price}}</p>
