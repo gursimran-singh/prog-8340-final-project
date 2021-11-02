@@ -1,0 +1,38 @@
+<div class="d-flex controls">
+    <h2>Blogs</h2>
+    <a class="btn btn-success" routerLink="/admin/blogs/create">New</a>
+</div>
+<br/>
+<div class="market_display transactions">
+    <table>
+        <thead>
+            <tr>
+                <th class="text_left">#</th>
+                <th class="text_left">NAME</th>
+                <th class="text_left">EXCERPT</th>
+                <th>PUBLISHED DATE</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let blog of blogs">
+                <td class="text_left" width="15%">
+                    <p>{{blog._id}}</p>
+                </td>
+                <td class="text_left" width="20%">
+                    <p>{{blog.title}}</p>
+                </td>
+                <td class="text_left">
+                    <p>{{blog.excerpt | slice:0:100}}</p>
+                </td>
+                <td width="15%">
+                    <p>{{blog.publishedDate | date:'mediumDate'}}</p>
+                </td>
+                <td class="actions" width="10%">
+                    <a routerLink="update/{{blog._id}}" class="market_up"><i class="fa fa-edit"></i></a>
+                    <a (click)="deleteBlog(blog._id, blog.title)" class="market_down"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

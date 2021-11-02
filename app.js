@@ -17,6 +17,16 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'app-public', 'build')));
 
+app.use("/api", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
+    next();
+  });
+
 app.use('/api', apiRouter);
 
 

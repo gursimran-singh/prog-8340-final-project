@@ -4,21 +4,28 @@ const router = express.Router();
 const ctrlCoin = require('../controllers/coin');
 const ctrlTransaction = require('../controllers/transaction');
 const ctrlBlog = require('../controllers/blog');
+const ctrlPlan = require('../controllers/plan');
 
 
 //locations
 
 router
   .route('/coins')
-  .get(ctrlCoin.getAllCoins);
+  .get(ctrlCoin.getAllCoins)
+  .post(ctrlCoin.createCoin);
+
+router
+  .route('/coins/coinid')
+  .put(ctrlCoin.updateCoin)
+  .delete(ctrlCoin.deleteCoin);
 
 router
   .route('/plans')
-  .get(ctrlCoin.getAllPlans);
+  .get(ctrlPlan.getAllPlans);
 
 router
   .route('/plans/planid')
-  .get(ctrlCoin.getSinglePlan);
+  .get(ctrlPlan.getSinglePlan);
 
 router
   .route('/transactions')
