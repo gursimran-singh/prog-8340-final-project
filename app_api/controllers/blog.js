@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const blogModel = mongoose.model('BitCoins');
+const blogModel = mongoose.model('Blog');
 
 var sendJSONResponse = function(res, status, content) {
     res.status(status);

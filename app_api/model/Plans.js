@@ -1,23 +1,21 @@
 const mongoose = require('mongoose');
 
 
-const plansSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required:true
-        },
-        price: {
-            type: Number,
-            required:true
-        },
-        features:{
-            type: Array, 
-            required: true
-        }
-
+const plansSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    features: {
+        type: Array,
+        required: true
     }
-);
+
+});
 
 
-mongoose.model('BitCoins2',plansSchema, 'plans');
+mongoose.model('Plan', plansSchema);

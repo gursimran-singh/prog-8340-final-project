@@ -24,4 +24,4 @@ const blogSchema = new mongoose.Schema({
         'default': '1/1/1970 00:00:00'
     }
 });
-mongoose.model('BitCoins', blogSchema, 'blogs');
+mongoose.model('Blog', blogSchema);
