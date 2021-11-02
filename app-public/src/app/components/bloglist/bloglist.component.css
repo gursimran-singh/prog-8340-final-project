@@ -35,10 +35,11 @@ li {
 
 .blog-content-container .blog-w .blog-content-area {
     display: flex;
-    justify-content: start;
-    align-items: flex-start;
     width: 100%;
     flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .blog-content-container .blog-w .blog-content-area .blog-content-list .single-blog {
@@ -65,4 +66,8 @@ li {
 
 .blog-content-container .blog-w .blog-content-area .blog-content-list .single-blog .single-blog-post i {
     margin-right: 10px;
+}
+
+p {
+    font-size: 0.8rem;
 }
