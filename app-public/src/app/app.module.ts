@@ -18,6 +18,7 @@ import { AboutCryptosComponent } from './components/about-cryptos/about-cryptos.
 import { BloglistComponent } from './components/bloglist/bloglist.component';
 import { BlogdetailsComponent } from './components/blogdetails/blogdetails.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutComponent } from './components/about/about.component';
     FooterBannerComponent,
     PlanComponent,
     TransactionComponent,
-    AboutCryptosComponent
+    AboutCryptosComponent,
+    ContactUsComponent
 
   ],
   imports: [
@@ -66,6 +68,10 @@ import { AboutComponent } from './components/about/about.component';
           {
             path: 'about',
             component: AboutComponent
+          },
+          {
+            path: 'contact',
+            component:ContactUsComponent
           }
         ]
 
