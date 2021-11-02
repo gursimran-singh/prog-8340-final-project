@@ -12,6 +12,7 @@ import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeaturedComponent } from './components/featured/featured.component';
 import { FooterBannerComponent } from './components/footer-banner/footer-banner.component';
+<<<<<<< HEAD
 import { BlogComponent } from './admin/blog/blog.component';
 import { BloglistComponent } from './components/bloglist/bloglist.component';
 import { BlogdetailsComponent } from './components/blogdetails/blogdetails.component';
@@ -27,6 +28,16 @@ import { AboutComponent } from './components/about/about.component';
     BloglistComponent,
     BlogdetailsComponent,
     AboutComponent
+=======
+
+@NgModule({
+  declarations: [
+    AppComponent, 
+    FrameworkComponent, 
+    HomepageComponent,
+    FeaturedComponent,
+    FooterBannerComponent
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
   ],
   imports: [
     BrowserModule,
@@ -41,6 +52,7 @@ import { AboutComponent } from './components/about/about.component';
           {
             path: '',
             component: HomepageComponent
+<<<<<<< HEAD
           },
           {
             path:'bloglist',
@@ -54,6 +66,9 @@ import { AboutComponent } from './components/about/about.component';
             path: 'about',
             component: AboutComponent
           },
+=======
+          }
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
         ]
       },
     ]),

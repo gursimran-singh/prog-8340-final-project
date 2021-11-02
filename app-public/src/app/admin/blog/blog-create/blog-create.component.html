@@ -10,6 +10,7 @@
             <div class="card-header bg-info"></div>
             <div class="card-body col-sm-10 mx-auto">
                 <form method="post" [formGroup]="form">
+<<<<<<< HEAD
                     <div class="form-group"><label for="name">Blog Title</label>
                         <input class="form-control" type="text" formControlName="title" name="name" id="name" placeholder="Enter Title" required="">
                     </div>
@@ -32,8 +33,39 @@
                     <div class="form-group">
                         <button class="btn btn-danger" [disabled]="!form.valid" (click)="onSubmit()">Submit</button>
                     </div>
+=======
+                    <div class="form-group"><label for="name">Name</label>
+                        <input class="form-control" type="text" formControlName="name" name="name" id="name"
+                            placeholder="Enter Name" required="">
+                    </div>
+                    <div class="form-group"><label for="genre">Excerpt</label>
+                        <input class="form-control" type="text" formControlName="excerpt" name="excerpt" id="excerpt"
+                            placeholder="Excerpt" required="">
+                    </div>
+                    <div class="form-group"><label for="publishedDate">Published Date</label>
+                        <input class="form-control" type="text" formControlName="publishedDate" name="publishedDate" id="publishedDate"
+                            placeholder="04/01/2021" required="">
+                    </div>
+                    <div class="form-group"><label for="image">Image</label>
+                        <input class="form-control" type="text" formControlName="image" name="image" id="image"
+                            placeholder="/images/blog.jpg" required="">
+                    </div>
+                    <div class="form-group"><label for="desription">Description</label>
+                        <textarea rows="5" cols="40" class="form-control" formControlName="description" name="description" id="description"
+                            required=""></textarea>
+                    </div>
+                    
+                    <div class="form-group"> 
+                        <button class="btn btn-danger" [disabled]="!form.valid"
+                            (click)="onSubmit()">Submit</button>
+                        </div>
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
                 </form>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
