@@ -1,64 +1,43 @@
-<!-- breadcrumb area start -->
-<div class="breadcrumb-area breadcrumb-bg extra">
+<section class="blog-details-container">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner">
-                    <h1 class="page-title">Blog Details</h1>
-                    <!-- <ul class="page-navigation">
-                            <li><a href="index.html"><i class="icofont-home"></i> Home</a></li>
-                            <li>Blog Details</li>
-                        </ul> -->
+
+        <!-- col-8 -->
+        <div class="blog-details-area">
+            <!-- blog details content area -->
+            <div class="details-area">
+                <h2 class="details-title">{{aBlog.title}}</h2>
+                <div class="details-img">
+                    <img src="assets/images/blog/{{aBlog.image}}" alt="blog single image">
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- breadcrumb area end -->
 
-<!-- blog details page content area start -->
-<section class="blog-details-page-content-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10">
-                <!-- col-8 -->
-                <div class="blog-details-content-area">
-                    <!-- blog details content area -->
-                    <div class="entry-content">
-                        <h3 class="title">{{aBlog.title}}</h3>
-                        <div class="thumb">
-                            <img src="assets/images/blog/{{aBlog.image}}" alt="blog single image">
-                        </div>
-                        <ul class="post-meta">
-                            <li><i class="far fa-calendar-alt"></i> {{aBlog.publishedDate}}</li>
-
-                        </ul>
-                        <!-- <blockquote>
+                <!-- <blockquote>
                               Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
                               <div class="icon"><i class="fas fa-quote-left"></i></div>
                           </blockquote> -->
-                        <p [innerHTML]="aBlog.description" style="text-align: justify;"></p>
-                    </div>
-                    <div class="entry-footer">
-                        <div class="left-content">
-                            <span class="posted_by">Posted By : <a href="#">{{aBlog.author}} </a></span>
-                        </div>
-                        <div class="right-content">
-                            <ul>
-                                <li class="title">Share:</li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- //. blog details content area -->
+                <p [innerHTML]="aBlog.description"></p>
             </div>
-            <!-- //.col-8 -->
 
+            <div class="details-footer">
+                <div class="footer-post">
+                    <span class="posted_by">Posted By : <a href="#">{{aBlog.author}} </a></span><br>
+                    <span class="details-post-date"><i class="far fa-calendar-alt"></i>{{aBlog.publishedDate}}</span>
+                </div>
+                <div class="detail-content-share">
+                    <ul>
+                        <li class="share-title">Share:</li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- //. blog details content area -->
         </div>
+        <!-- //.col-8 -->
+
+
     </div>
 
 </section>

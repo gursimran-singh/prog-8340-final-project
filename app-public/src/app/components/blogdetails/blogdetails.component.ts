@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-blogdetails',
   templateUrl: './blogdetails.component.html',
-  styleUrls: ['../../../assets/css/blogstyle.css']
+  styleUrls: ['./blogdetails.component.css']
 })
 export class BlogdetailsComponent implements OnInit {
   public aBlog:Blog={

@@ -1,50 +1,31 @@
-<!-- breadcrumb area start -->
-<div class="breadcrumb-area breadcrumb-bg extra" id="header-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner">
-                    <h1 class="page-title">Blog</h1>
-                    <!-- <ul class="page-navigation">
-                          <li><a href="index.html"><i class="icofont-home"></i> Home</a></li>
-                          <li>Blog</li>
-                      </ul> -->
-                </div>
-            </div>
+<section class="blog-content-container">
+
+    <div class="container blog-w">
+        <div class="blog-page-title-container">
+            <h2 class="blog-page-title">Blog</h2>
         </div>
-    </div>
-</div>
-<!-- breadcrumb area end -->
 
-<!-- blog page content area start -->
-<section class="blog-page-content-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10">
-                <div class="row">
+        <div class="blog-content-area">
 
-                    <div class="col-lg-6 col-md-6" *ngFor="let item of blogs">
-                        <div class="single-blog-item margin-bottom-30">
-                            <!-- single blog item -->
-                            <div class="thumb">
-                                <img src="assets/images/blog/{{item.image}}" alt="blog image">
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a routerLink="/bloglist/{{item._id}}">{{item.title}}</a></h4>
-                                <p [innerHTML]="item.excerpt" style="text-align: justify"></p>
-                                <ul class="post-meta">
-                                    <li>By: <a href="#">{{item.author}}</a> </li>
-                                    <li><a href="#">{{item.publishedDate}}</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- //. single blog item -->
+
+            <div class="blog-content-list" *ngFor="let item of blogs">
+                <div class="single-blog">
+                    <div class="single-blog-img">
+                        <img src="assets/images/blog/{{item.image}}" alt="blog image">
                     </div>
-
-
+                    <div class="single-blog-content">
+                        <h4 class="single-blog-tilte title"><a routerLink="/bloglist/{{item._id}}">{{item.title}}</a></h4>
+                        <p [innerHTML]="item.excerpt"></p>
+                        <ul class="single-blog-post">
+                            <li>By: <a href="#">{{item.author}}</a> </li>
+                            <li><i class="far fa-calendar-alt"></i><a href="#">{{item.publishedDate}}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
         </div>
+
     </div>
+
 </section>
