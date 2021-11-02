@@ -7,20 +7,20 @@ const coinsSchema = new mongoose.Schema(
             required:true
         },
         price:{
-            type:Number,
+            type:String,
             required:true
         },
-        marketCap:{
-            type:Number,
+        maketCap:{
+            type:String,
             required:true
         },
         volume:{
-            type:Number,
+            type:String,
             required:true
         },
         quantity:
         {
-            type:Number,
+            type:String,
             required:true
         },
         image:{
@@ -36,6 +36,5 @@ const coinsSchema = new mongoose.Schema(
             required:true
         },
 
-    }
-);
-mongoose.model('BitCoins1',coinsSchema, 'Coins');
+});
+mongoose.model('Coin', coinsSchema, 'Coins');

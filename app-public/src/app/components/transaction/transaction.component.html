@@ -1,0 +1,41 @@
+<section class="container">
+    <div class="pricing_container">
+        <h1>Add New Transaction</h1>
+        <form (ngSubmit)='onSubmit()' [formGroup]="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <br>
+                <input id="name" placeholder="Name" name="name" required="required" class="form-control"
+                    formControlName="name">
+            </div>
+            <div class="form-group">
+                <br><label for="price">Price </label>
+                <br><input placeholder="$0.00" class="form-control" type="text" name="price" required=""
+                    formControlName="price">
+            </div>
+            <div class="form-group"><br>
+                <label for="startDate">Start Date</label>
+                <br><input placeholder="MM/DD/YYYY" class="form-control" type="text" name="startDate" required=""
+                    formControlName="startDate">
+            </div>
+            <div class="form-group"><br>
+                <label for="endDate">End Date</label>
+                <br><input placeholder="MM/DD/YYYY" class="form-control" type="text" name="endDate" required=""
+                    formControlName="endDate">
+            </div>
+            <div class="form-group"><br>
+                <label for="email">Email</label>
+                <br><input placeholder="test@gmail.com" class="form-control" type="text" name="email" required=""
+                    formControlName="email">
+            </div>
+            <div class="form-group"><br>
+                <label for="plan">Plan</label>
+                <br><input placeholder="Basic" class="form-control" type="text" name="plan" required=""
+                    formControlName="plan">
+            </div>
+            <div class="form-group"><br>
+                <br><input class="btn btn-success" type="submit" value="Submit" [disabled]="!form.valid">
+            </div>
+        </form>
+    </div>
+</section>

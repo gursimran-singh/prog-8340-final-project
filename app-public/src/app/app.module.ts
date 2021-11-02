@@ -12,14 +12,25 @@ import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeaturedComponent } from './components/featured/featured.component';
 import { FooterBannerComponent } from './components/footer-banner/footer-banner.component';
+import { PlanComponent } from './components/plan/plan.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { AboutCryptosComponent } from './components/about-cryptos/about-cryptos.component';
+import { BloglistComponent } from './components/bloglist/bloglist.component';
+import { BlogdetailsComponent } from './components/blogdetails/blogdetails.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    FrameworkComponent, 
+    AppComponent,
+    FrameworkComponent,
     HomepageComponent,
     FeaturedComponent,
-    FooterBannerComponent
+    BloglistComponent,
+    FooterBannerComponent,
+    PlanComponent,
+    TransactionComponent,
+    AboutCryptosComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,12 +41,34 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
       {
         path: '',
         component: FrameworkComponent,
-        children:[
+        children: [
           {
             path: '',
             component: HomepageComponent
+          },
+          {
+            path: 'price',
+            component: PlanComponent
+          }
+          ,
+          {
+            path: 'transaction',
+            component: TransactionComponent
+          },
+          {
+            path: 'bloglist',
+            component: BloglistComponent
+          },
+          {
+            path: 'bloglist/:blogId',
+            component: BlogdetailsComponent
+          },
+          {
+            path: 'about',
+            component: AboutComponent
           }
         ]
+
       },
     ]),
     AdminModule,
@@ -43,4 +76,4 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

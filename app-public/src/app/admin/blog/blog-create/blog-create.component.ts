@@ -32,7 +32,8 @@ export class BlogCreateComponent implements OnInit {
       image: [null, Validators.required],
       excerpt: [null, Validators.required],
       description: [null, Validators.required],
-      publishedDate: [null],
+      author: [null,Validators.required],
+      publishedDate:[null]
     });
 
     if (!this.isAddMode) {

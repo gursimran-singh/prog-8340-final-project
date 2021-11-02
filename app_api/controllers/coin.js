@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const coinsModel = mongoose.model('BitCoins1');
-
-
+const coinsModel = mongoose.model('Coin');
 
 var sendJSONResponse = function (res, status, content) {
   res.status(status);
@@ -17,33 +15,33 @@ const getAllCoins = function (req, res) {
         .json(err);
       return;
     }
-
     res
       .status(200)
       .json(data);
   });
 };
 
+
 const getSingleCoin = function (req, res) {
   if (req.params && req.params.coinid) {
-      coinsModel
-          .findById(req.params.coinid)
-          .exec(function (err, data) {
-              if (!coinsModel) {
-                  sendJSONResponse(res, 404, {
-                      "message": "coinid not found"
-                  });
-                  return;
-              } else if (err) {
-                  sendJSONResponse(res, 404, err);
-                  return;
-              }
-              sendJSONResponse(res, 200, data);
+    coinsModel
+      .findById(req.params.coinid)
+      .exec(function (err, data) {
+        if (!coinsModel) {
+          sendJSONResponse(res, 404, {
+            "message": "coinid not found"
           });
-  } else {
-      sendJSONResponse(res, 404, {
-          "message": "No input parameter in request"
+          return;
+        } else if (err) {
+          sendJSONResponse(res, 404, err);
+          return;
+        }
+        sendJSONResponse(res, 200, data);
       });
+  } else {
+    sendJSONResponse(res, 404, {
+      "message": "No input parameter in request"
+    });
   }
 };
 
@@ -127,10 +125,27 @@ const deleteCoin = function (req, res) {
   }
 };
 
+
+const getFeaturedCoins = function (req, res) {
+  coinsModel.find().exec(function (err, data) {
+    if (err) {
+      res
+        .status(404)
+        .json(err);
+      return;
+    }
+    res
+      .status(200)
+      .json(data);
+  });
+};
+
+
 module.exports = {
   getAllCoins,
   createCoin,
   updateCoin,
   deleteCoin,
-  getSingleCoin
+  getSingleCoin,
+  getFeaturedCoins
 };

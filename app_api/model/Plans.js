@@ -5,19 +5,18 @@ const plansSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required:true
+            required: true
         },
         price: {
-            type: Number,
-            required:true
+            type: String,
+            required: true
         },
-        features:{
-            type: Array, 
+        features: {
+            type: Array,
             required: true
         }
 
-    }
-);
+    });
 
 
-mongoose.model('BitCoins2',plansSchema, 'plans');
+mongoose.model('Plan', plansSchema);

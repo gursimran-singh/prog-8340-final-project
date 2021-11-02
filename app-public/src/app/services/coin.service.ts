@@ -1,45 +1,53 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { coin as Coin } from '../models/coin';
+import { coin } from '../models/coin';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoinService {
-  private coinsUrl = 'http://localhost:3000/api/coins';
+  private coinURl = 'http://localhost:3000/api/coins';
+  private featuredCoinURl = 'http://localhost:3000/api/featuredCoins';
+
   constructor(private http: HttpClient) {}
 
-  getCoins(): Promise<Coin[]> {
+  getCoins(): Promise<coin[]> {
     return this.http
-      .get(this.coinsUrl)
+      .get(this.coinURl)
       .toPromise()
       .then((response) => {
-        return response as Coin[];
+        return response as coin[];
       });
   }
 
-  getSingleCoin(coinid: string): Promise<Coin> {
+  getFeaturedCoins(): Promise<coin[]> {
     return this.http
-      .get(this.coinsUrl + '/' + coinid)
+      .get(this.coinURl)
       .toPromise()
-      .then((response) => response as Coin);
+      .then((response) => {
+        return response as coin[];
+      });
   }
 
-  createCoin(newCoin: Coin): Promise<void | Coin> {
+  createCoin(newCoin: coin): Promise<void | coin> {
     return this.http
-      .post(this.coinsUrl, newCoin)
+      .post(this.coinURl, newCoin)
       .toPromise()
-      .then((response) => response as Coin);
+      .then((response) => response as coin);
   }
 
-  updateCoin(id: string, newCoin: Coin): Promise<void | Coin> {
+  updateCoin(id: string, newCoin: coin): Promise<void | coin> {
     return this.http
-      .put(this.coinsUrl + '/' + id, newCoin)
+      .put(this.coinURl + '/' + id, newCoin)
       .toPromise()
-      .then((response) => response as Coin);
+      .then((response) => response as coin);
   }
 
   deleteCoin(id: string): Promise<object> {
-    return this.http.delete(this.coinsUrl + '/' + id).toPromise();
+    return this.http.delete(this.coinURl + '/' + id).toPromise();
+  }
+
+  private handleError(error: any) {
+    console.log(error.error);
   }
 }

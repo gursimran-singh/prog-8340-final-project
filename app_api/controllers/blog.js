@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
-const blogModel = mongoose.model('BitCoins');
+const blogModel = mongoose.model('Blog');
 
-var sendJSONResponse = function (res, status, content) {
+var sendJSONResponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 };
 
 
 
-const getAllBlogs = function (req, res) {
-    blogModel.find().exec(function (err, data) {
+const getAllBlogs = function(req, res) {
+    blogModel.find().exec(function(err, data) {
         if (err) {
             res
                 .status(404)
@@ -23,11 +23,11 @@ const getAllBlogs = function (req, res) {
     });
 };
 
-const getSingleBlog = function (req, res) {
+const getSingleBlog = function(req, res) {
     if (req.params && req.params.blogid) {
         blogModel
             .findById(req.params.blogid)
-            .exec(function (err, data) {
+            .exec(function(err, data) {
                 if (!blogModel) {
                     sendJSONResponse(res, 404, {
                         "message": "blogid not found"
@@ -47,13 +47,14 @@ const getSingleBlog = function (req, res) {
 };
 
 
-const createBlog = function (req, res) {
+const createBlog = function(req, res) {
     blogModel.create({
-        name: req.body.name,
+        title: req.body.title,
+        author: req.body.author,
         image: req.body.image,
         excerpt: req.body.excerpt,
         description: req.body.description,
-        publishedDate: Date.parse(req.body.publishedDate),
+        publishedDate: req.body.publishedDate
     }, (err, data) => {
         if (err) {
             res
@@ -69,7 +70,7 @@ const createBlog = function (req, res) {
 };
 
 
-const updateBlog = function (req, res) {
+const updateBlog = function(req, res) {
     if (!req.params.blogid) {
         sendJSONResponse(res, 404, { message: "Not found, blogid is required" });
     } else {
@@ -79,11 +80,12 @@ const updateBlog = function (req, res) {
             } else if (err) {
                 sendJSONResponse(res, 400, err);
             } else {
-                    blogData.name = req.body.name,
+                blogData.title = req.body.title,
+                    blogData.author = req.body.author,
                     blogData.image = req.body.image,
                     blogData.excerpt = req.body.excerpt,
                     description = req.body.description,
-                    blogData.publishedDate = Date.parse(req.body.publishedDate),
+                    blogData.publishedDate = req.body.publishedDate,
                     blogData.save((err, blogData) => {
                         if (err) {
                             sendJSONResponse(res, 400, err);
@@ -96,7 +98,7 @@ const updateBlog = function (req, res) {
     }
 };
 
-const deleteBlog = function (req, res) {
+const deleteBlog = function(req, res) {
     const blogid = req.params.blogid;
 
     if (blogid) {

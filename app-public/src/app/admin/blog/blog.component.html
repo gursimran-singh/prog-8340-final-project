@@ -9,7 +9,7 @@
             <tr>
                 <th class="text_left">#</th>
                 <th class="text_left">TITLE</th>
-                <th class="text_left">EXCERPT</th>
+                <th class="text_left">AUTHOR</th>
                 <th>PUBLISHED DATE</th>
                 <th>ACTIONS</th>
             </tr>
@@ -19,8 +19,8 @@
                 <td class="text_left" width="15%">
                     <p>{{blog._id}}</p>
                 </td>
-                <td class="text_left" width="20%"><p>{{blog.title}}</p></td>
-                <td class="text_left"><p>{{blog.excerpt | slice:0:100}}</p></td>
+                <td class="text_left" width="30%"><p>{{blog.title}}</p></td>
+                <td class="text_left"><p>{{blog.author}}</p></td>
                 <td width="15%"><p>{{blog.publishedDate | date:'mediumDate'}}</p></td>
                 <td class="actions" width="10%">
                     <a routerLink="update/{{blog._id}}" class="market_up"><i class="fa fa-edit"></i></a>

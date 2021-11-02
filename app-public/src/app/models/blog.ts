@@ -1,21 +1,24 @@
 export class Blog {
     _id: string;
     title: string;
+    author:string;
     image: string;
     excerpt: string;
     description: string;
-    publishedDate: number;
-  
+    publishedDate: string;
+
     constructor(
       _id: string,
       title: string,
+      author:string,
       excerpt: string,
       description: string,
       image: string,
-      publishedDate: number,
+      publishedDate: string,
     ) {
       this._id = _id;
       this.title = title;
+      this.author= author;
       this.excerpt = excerpt;
       this.image = image;
       this.description = description;

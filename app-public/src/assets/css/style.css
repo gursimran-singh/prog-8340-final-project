@@ -761,3 +761,12 @@ footer ul > li > a {
     width: 20%;
   }
 }
+.isFeatured{
+  text-align: center;
+  color: green;
+}
+
+.isNotFeatured{
+  text-align: center;
+  color: red;
+}
