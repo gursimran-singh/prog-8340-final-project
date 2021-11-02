@@ -23,6 +23,7 @@ export class HomepageComponent implements OnInit {
           return;
         }
         this.coins = coins;
+        console.log(this.coins);
       });
   }
 

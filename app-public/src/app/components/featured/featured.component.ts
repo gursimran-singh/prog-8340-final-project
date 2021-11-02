@@ -14,7 +14,7 @@ export class FeaturedComponent implements OnInit {
 
   ngOnInit() {
     this.coinService
-      .getCoins()
+      .getFeaturedCoins()
       .then((coins: void | coin[]) => {
         if (!coins) {
           return;

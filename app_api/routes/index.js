@@ -19,6 +19,10 @@ router
   .put(ctrlCoin.updateCoin)
   .delete(ctrlCoin.deleteCoin);
 
+  router
+  .route('/featuredCoins')
+  .get(ctrlCoin.getFeaturedCoins);
+
 router
   .route('/plans')
   .get(ctrlPlan.getAllPlans);

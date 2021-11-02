@@ -32,22 +32,16 @@
                         <p>1</p>
                     </td>
                     <td class="text_left">
-                        <i class="cc BTC"></i>
+                        <i class="cc {{ coin.abbre }}"></i>
                         {{ coin.name }} <span class="abbr">{{ coin.abbre }}</span>
                     </td>
                     <td>${{ coin.price }}</td>
-                    <!-- <td class="market_up">
-                        <i class="fas fa-sort-up"></i>
-                        <span>12.17%</span>
+                    <td>${{ coin.maketCap }}</td>
+                    <td>${{ coin.volume }} <p>{{ coin.quantity }} {{ coin.abbre }}</p>
                     </td>
-                    <td class="market_down">
-                        <i class="fas fa-sort-down"></i>
-                        <span>15.18%</span>
-                    </td> -->
-                    <td>${{ coin.marketCap }}</td>
-                    <td>${{ coin.volume }} <p>120,452,426 BTC</p>
-                    </td>
-                    <td>{{ coin.isFeatured }}</td>
+                    <td *ngIf="coin.isFeatured" class="isFeatured"><i class="fa fa-check"></i></td>
+                    <td *ngIf="!coin.isFeatured" class="isNotFeatured"><i class="fa fa-times "></i></td>
+
                 </tr>
             </tbody>
         </table>

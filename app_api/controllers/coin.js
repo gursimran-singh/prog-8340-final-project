@@ -51,9 +51,9 @@ const createCoin = function (req, res) {
   coinsModel.create({
     name: req.body.name,
     price: req.body.price,
-    marketCap: parseInt(req.body.marketCap),
-    volume: parseInt(req.body.volume),
-    quantity: parseInt(req.body.quantity),
+    maketCap: (req.body.maketCap),
+    volume: (req.body.volume),
+    quantity: (req.body.quantity),
     image: req.body.image,
     abbre: req.body.abbre,
     isFeatured: req.body.isFeatured,
@@ -85,9 +85,9 @@ const updateCoin = function (req, res) {
       } else {
         coinData.name = req.body.name,
           coinData.price = req.body.price,
-          coinData.marketCap = parseInt(req.body.marketCap),
-          coinData.volume = parseInt(req.body.volume),
-          coinData.quantity = parseInt(req.body.quantity),
+          coinData.maketCap = (req.body.maketCap),
+          coinData.volume = (req.body.volume),
+          coinData.quantity = (req.body.quantity),
           coinData.image = req.body.image,
           coinData.abbre = req.body.abbre,
           coinData.isFeatured = req.body.isFeatured,
@@ -127,10 +127,29 @@ const deleteCoin = function (req, res) {
   }
 };
 
+
+const getFeaturedCoins = function (req, res) {
+  coinsModel.find()
+  //.where(x => x.isFeatured)
+  .exec(function (err, data) {
+    if (err) {
+      res
+        .status(404)
+        .json(err);
+      return;
+    }
+
+    res
+      .status(200)
+      .json(data);
+  });
+};
+
 module.exports = {
   getAllCoins,
   createCoin,
   updateCoin,
   deleteCoin,
-  getSingleCoin
+  getSingleCoin,
+  getFeaturedCoins
 };

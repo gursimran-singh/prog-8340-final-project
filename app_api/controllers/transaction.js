@@ -25,7 +25,7 @@ const CreateTransaction = function (req, res) {
         plan:req.body.plan,
         startDate: Date.parse(req.body.startDate),
         endDate:Date.parse(req.body.endDate),
-        price:parseInt(req.body.price)
+        price:(req.body.price)
   }, (err, data) => {
     if (err) {
       res

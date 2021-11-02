@@ -12,6 +12,9 @@ import { FrameworkComponent } from './components/framework/framework.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FeaturedComponent } from './components/featured/featured.component';
 import { FooterBannerComponent } from './components/footer-banner/footer-banner.component';
+import { PlanComponent } from './components/plan/plan.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { AboutCryptosComponent } from './components/about-cryptos/about-cryptos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
     FrameworkComponent, 
     HomepageComponent,
     FeaturedComponent,
-    FooterBannerComponent
+    FooterBannerComponent,
+    PlanComponent,
+    TransactionComponent,
+    AboutCryptosComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +40,15 @@ import { FooterBannerComponent } from './components/footer-banner/footer-banner.
           {
             path: '',
             component: HomepageComponent
+          },
+          {
+            path: 'price',
+            component: PlanComponent
+          }
+          ,
+          {
+            path: 'transaction',
+            component: TransactionComponent
           }
         ]
       },
