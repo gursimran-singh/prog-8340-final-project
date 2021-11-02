@@ -30,7 +30,7 @@
                                 <img src="assets/images/blog/{{item.image}}" alt="blog image">
                             </div>
                             <div class="content">
-                                <h4 class="title"><a [routerLink]="[ '/bloglist/', item._id]">{{item.title}}</a></h4>
+                                <h4 class="title"><a routerLink="[ '/bloglist/', item._id]">{{item.title}}</a></h4>
                                 <p [innerHTML]="item.excerpt" style="text-align: justify"></p>
                                 <ul class="post-meta">
                                     <li>By: <a href="#">{{item.author}}</a> </li>

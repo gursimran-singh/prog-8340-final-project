@@ -125,6 +125,22 @@ const deleteCoin = function (req, res) {
   }
 };
 
+
+const getFeaturedCoins = function (req, res) {
+  coinsModel.find().exec(function (err, data) {
+    if (err) {
+      res
+        .status(404)
+        .json(err);
+      return;
+    }
+    res
+      .status(200)
+      .json(data);
+  });
+};
+
+
 module.exports = {
   getAllCoins,
   createCoin,

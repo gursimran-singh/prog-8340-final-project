@@ -19,7 +19,6 @@
                 <td class="text_left" width="15%">
                     <p>{{blog._id}}</p>
                 </td>
-<<<<<<< HEAD
                 <td class="text_left" width="20%">
                     <p>{{blog.title}}</p>
                 </td>
@@ -32,14 +31,6 @@
                 <td class="actions" width="10%">
                     <a routerLink="update/{{blog._id}}" class="market_up"><i class="fa fa-edit"></i></a>
                     <a (click)="deleteBlog(blog._id, blog.title)" class="market_down"><i class="fa fa-trash"></i></a>
-=======
-                <td class="text_left" width="20%"><p>{{blog.name}}</p></td>
-                <td class="text_left"><p>{{blog.excerpt | slice:0:100}}</p></td>
-                <td width="15%"><p>{{blog.publishedDate | date:'mediumDate'}}</p></td>
-                <td class="actions" width="10%">
-                    <a routerLink="update/{{blog._id}}" class="market_up"><i class="fa fa-edit"></i></a>
-                    <a (click)="deleteBlog(blog._id, blog.name)" class="market_down"><i class="fa fa-trash"></i></a>
->>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
                 </td>
             </tr>
         </tbody>
