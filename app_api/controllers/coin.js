@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const coinsModel = mongoose.model('BitCoins1');
-
-
+const coinsModel = mongoose.model('Coin');
 
 var sendJSONResponse = function (res, status, content) {
   res.status(status);
@@ -17,33 +15,33 @@ const getAllCoins = function (req, res) {
         .json(err);
       return;
     }
-
     res
       .status(200)
       .json(data);
   });
 };
 
+
 const getSingleCoin = function (req, res) {
   if (req.params && req.params.coinid) {
-      coinsModel
-          .findById(req.params.coinid)
-          .exec(function (err, data) {
-              if (!coinsModel) {
-                  sendJSONResponse(res, 404, {
-                      "message": "coinid not found"
-                  });
-                  return;
-              } else if (err) {
-                  sendJSONResponse(res, 404, err);
-                  return;
-              }
-              sendJSONResponse(res, 200, data);
+    coinsModel
+      .findById(req.params.coinid)
+      .exec(function (err, data) {
+        if (!coinsModel) {
+          sendJSONResponse(res, 404, {
+            "message": "coinid not found"
           });
-  } else {
-      sendJSONResponse(res, 404, {
-          "message": "No input parameter in request"
+          return;
+        } else if (err) {
+          sendJSONResponse(res, 404, err);
+          return;
+        }
+        sendJSONResponse(res, 200, data);
       });
+  } else {
+    sendJSONResponse(res, 404, {
+      "message": "No input parameter in request"
+    });
   }
 };
 
@@ -51,9 +49,9 @@ const createCoin = function (req, res) {
   coinsModel.create({
     name: req.body.name,
     price: req.body.price,
-    maketCap: (req.body.maketCap),
-    volume: (req.body.volume),
-    quantity: (req.body.quantity),
+    marketCap: parseInt(req.body.marketCap),
+    volume: parseInt(req.body.volume),
+    quantity: parseInt(req.body.quantity),
     image: req.body.image,
     abbre: req.body.abbre,
     isFeatured: req.body.isFeatured,
@@ -85,9 +83,9 @@ const updateCoin = function (req, res) {
       } else {
         coinData.name = req.body.name,
           coinData.price = req.body.price,
-          coinData.maketCap = (req.body.maketCap),
-          coinData.volume = (req.body.volume),
-          coinData.quantity = (req.body.quantity),
+          coinData.marketCap = parseInt(req.body.marketCap),
+          coinData.volume = parseInt(req.body.volume),
+          coinData.quantity = parseInt(req.body.quantity),
           coinData.image = req.body.image,
           coinData.abbre = req.body.abbre,
           coinData.isFeatured = req.body.isFeatured,
@@ -125,24 +123,6 @@ const deleteCoin = function (req, res) {
       .status(404)
       .json({ "message": "No coinid" });
   }
-};
-
-
-const getFeaturedCoins = function (req, res) {
-  coinsModel.find()
-  //.where(x => x.isFeatured)
-  .exec(function (err, data) {
-    if (err) {
-      res
-        .status(404)
-        .json(err);
-      return;
-    }
-
-    res
-      .status(200)
-      .json(data);
-  });
 };
 
 module.exports = {

@@ -13,6 +13,10 @@ export class BlogCreateComponent implements OnInit {
   title = 'Create New Blog';
   id!: string;
   isAddMode!: boolean;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -28,11 +32,20 @@ export class BlogCreateComponent implements OnInit {
     }
 
     this.form = this.fb.group({
+<<<<<<< HEAD
+      title: [null, Validators.required],
+      image: [null, Validators.required],
+      excerpt: [null, Validators.required],
+      description: [null, Validators.required],
+      author: [null,Validators.required],
+      publishedDate:[null]
+=======
       name: [null, Validators.required],
       image: [null, Validators.required],
       excerpt: [null, Validators.required],
       description: [null, Validators.required],
       publishedDate: [null],
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
     });
 
     if (!this.isAddMode) {
@@ -48,6 +61,10 @@ export class BlogCreateComponent implements OnInit {
     }
 
     if (this.isAddMode) {
+<<<<<<< HEAD
+
+=======
+>>>>>>> 99deb4f9e1c07372bc40cb5ef50bdda459ad2b98
       this.blogService
         .createBlog(this.form.value)
         .then(() => {
