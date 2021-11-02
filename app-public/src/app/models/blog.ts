@@ -1,6 +1,6 @@
 export class Blog {
     _id: string;
-    name: string;
+    title: string;
     image: string;
     excerpt: string;
     description: string;
@@ -8,14 +8,14 @@ export class Blog {
   
     constructor(
       _id: string,
-      name: string,
+      title: string,
       excerpt: string,
       description: string,
       image: string,
       publishedDate: number,
     ) {
       this._id = _id;
-      this.name = name;
+      this.title = title;
       this.excerpt = excerpt;
       this.image = image;
       this.description = description;

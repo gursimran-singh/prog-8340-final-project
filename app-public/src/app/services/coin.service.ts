@@ -1,38 +1,45 @@
 import { Injectable } from '@angular/core';
-import { coin } from '../models/coin';
 import { HttpClient } from '@angular/common/http';
+import { coin as Coin } from '../models/coin';
 
-
-@Injectable()
-
+@Injectable({
+  providedIn: 'root',
+})
 export class CoinService {
-  private coinURl = 'http://localhost:3000/api/coins';
+  private coinsUrl = 'http://localhost:3000/api/coins';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-  getCoins(): Promise<void | coin[]> {
-    return this.http.get(this.coinURl)
+  getCoins(): Promise<Coin[]> {
+    return this.http
+      .get(this.coinsUrl)
       .toPromise()
-      .then(response => response as coin[])
-      .catch(this.handleError);
+      .then((response) => {
+        return response as Coin[];
+      });
   }
 
-  private handleError(error: any) {
-    let errorMessage = '';
+  getSingleCoin(coinid: string): Promise<Coin> {
+    return this.http
+      .get(this.coinsUrl + '/' + coinid)
+      .toPromise()
+      .then((response) => response as Coin);
+  }
 
-    // client-side error
+  createCoin(newCoin: Coin): Promise<void | Coin> {
+    return this.http
+      .post(this.coinsUrl, newCoin)
+      .toPromise()
+      .then((response) => response as Coin);
+  }
 
-    console.log(error.error);
+  updateCoin(id: string, newCoin: Coin): Promise<void | Coin> {
+    return this.http
+      .put(this.coinsUrl + '/' + id, newCoin)
+      .toPromise()
+      .then((response) => response as Coin);
+  }
 
-    // } else {
-
-    //   // server-side error
-
-    //   errorMessage = Error Code: ${error.status}\nMessage: ${error.message};
-
-    // }
-
-    //window.alert(errorMessage);
-
-
+  deleteCoin(id: string): Promise<object> {
+    return this.http.delete(this.coinsUrl + '/' + id).toPromise();
   }
 }

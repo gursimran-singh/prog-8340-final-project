@@ -1,1 +1,33 @@
-<p>coin works!</p>
+
+<div class="d-flex controls">
+    <h2>Coins</h2>
+    <a class="btn btn-success" routerLink="/admin/coins/create">New</a>
+</div>
+<br/>
+<div class="market_display transactions">
+    <table>
+        <thead>
+            <tr>
+                <th class="text_left">#</th>
+                <th class="text_left">NAME</th>
+                <th class="text_left">MARKET CAP</th>
+                <th>QUANTITY</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let coin of coins">
+                <td class="text_left" width="15%">
+                    <p>{{coin._id}}</p>
+                </td>
+                <td class="text_left" width="20%"><p>{{coin.name}}</p></td>
+                <td class="text_left"><p>{{coin.marketCap}}</p></td>
+                <td width="15%"><p>{{coin.quantity}}</p></td>
+                <td class="actions" width="10%">
+                    <a routerLink="update/{{coin._id}}" class="market_up"><i class="fa fa-edit"></i></a>
+                    <a (click)="deleteCoin(coin._id, coin.name)" class="market_down"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

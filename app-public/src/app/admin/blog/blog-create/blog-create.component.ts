@@ -28,7 +28,7 @@ export class BlogCreateComponent implements OnInit {
     }
 
     this.form = this.fb.group({
-      name: [null, Validators.required],
+      title: [null, Validators.required],
       image: [null, Validators.required],
       excerpt: [null, Validators.required],
       description: [null, Validators.required],
