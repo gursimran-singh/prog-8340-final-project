@@ -1,6 +1,7 @@
 <section class="container">
     <div class="pricing_container">
-        <h1>Add New Transaction</h1>
+        <h2>Add New Transaction</h2>
+        <br>
         <form (ngSubmit)='onSubmit()' [formGroup]="form">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -34,7 +35,8 @@
                     formControlName="plan">
             </div>
             <div class="form-group"><br>
-                <br><input class="btn btn-primary" type="submit" value="Submit" [disabled]="!form.valid">
+                <br><input class="btn btn-danger" type="submit" value="Submit">
+                <a class="btn btn-success aBack" routerLink="/price">Back</a> 
             </div>
         </form>
     </div>

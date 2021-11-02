@@ -1,42 +1,39 @@
-
-<div>
-    <div class="d-flex controls">
+<section class="container">
+    <div class="pricing_container">
         <h2>Contact Us</h2>
-        <a class="float-right btn btn-success" routerLink="price">Back</a>
-    </div>
-    <br>
-    <br>
-    <div class="food-form">
-        <div class="card">
-            <div class="card-header bg-info"></div>
-            <div class="card-body col-sm-10 mx-auto">
-              <form method="post" >   <!-- [formGroup]="form" -->
-                    <div class="form-group"><label for="firstname">First Name:</label>
-                        <input class="form-control" type="text"  name="name" id="name" placeholder="Enter First Name" required="">
-                    </div>
-                    <br>
-                    <div class="form-group"><label for="lastname">Last Name:</label>
-                        <input class="form-control" type="text"  name="lastname" id="lastname" placeholder="Enter Last Name" required="">
-                    </div>
-                    <br>
-                    <div class="form-group"><label for="emailaddress">Email:</label>
-                        <input class="form-control" type="email"  name="emailaddress" id="emailaddress" placeholder="Enter Email address" required="">
-                    </div>
-                    <br>
-                    <div class="form-group"><label for="dateofbirth">DOB:</label>
-                        <input class="form-control" type="text"  name="dateofbirth" id="dateofbirth" placeholder="DD/MM/YYYY" required="">
-                    </div>
-                    <br>
-                    <div class="form-group"><label for="contact">Contact No:</label>
-                        <input class="form-control" type="text"  name="contact" id="contact" placeholder="xxx-xxx-xxxx" required="">
-                    </div>
-                   
-                    <br>
-                    <div class="form-group">
-                        <button class="btn btn-danger" >Submit</button>
-                    </div>
-                </form>
+        <br>
+        <form method="post">
+            <!-- [formGroup]="form" -->
+            <div class="form-group"><label for="firstname">First Name:</label>
+                <input class="form-control" type="text" name="name" id="name" placeholder="Enter First Name"
+                    required="">
             </div>
-        </div>
+            <br>
+            <div class="form-group"><label for="lastname">Last Name:</label>
+                <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Enter Last Name"
+                    required="">
+            </div>
+            <br>
+            <div class="form-group"><label for="emailaddress">Email:</label>
+                <input class="form-control" type="email" name="emailaddress" id="emailaddress"
+                    placeholder="Enter Email address" required="">
+            </div>
+            <br>
+            <div class="form-group"><label for="dateofbirth">DOB:</label>
+                <input class="form-control" type="text" name="dateofbirth" id="dateofbirth" placeholder="DD/MM/YYYY"
+                    required="">
+            </div>
+            <br>
+            <div class="form-group"><label for="contact">Contact No:</label>
+                <input class="form-control" type="text" name="contact" id="contact" placeholder="xxx-xxx-xxxx"
+                    required="">
+            </div>
+
+            <br>
+            <div class="form-group">
+                <button class="btn btn-danger mr-1">Submit</button>
+                <a class="btn btn-success aBack" routerLink="price">Back</a> 
+            </div>
+        </form>
     </div>
-</div>
+</section>
