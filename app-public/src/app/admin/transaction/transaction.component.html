@@ -1,0 +1,32 @@
+<div class="d-flex controls">
+    <h2>Transactions</h2>
+</div>
+<br/>
+<div class="market_display transactions">
+    <table>
+        <thead>
+            <tr>
+                <th class="text_left">#</th>
+                <th class="text_left">NAME</th>
+                <th class="text_left">EMAIL</th>
+                <th class="text_left">PRICE</th>
+                <th class="text_left">PLAN</th>
+                <th class="">START DATE</th>
+                <th class="">END DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions">
+                <td class="text_left" width="15%">
+                    <p>{{transaction._id}}</p>
+                </td>
+                <td class="text_left"><p>{{transaction.name}}</p></td>
+                <td class="text_left"><p>{{transaction.email}}</p></td>
+                <td class="text_left"><p>{{transaction.price}}</p></td>
+                <td class="text_left"><p>{{transaction.plan}}</p></td>
+                <td width="15%"><p>{{transaction.startDate | date:'mediumDate'}}</p></td>
+                <td width="15%"><p>{{transaction.endDate | date:'mediumDate'}}</p></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -15,7 +15,8 @@ router
   .post(ctrlCoin.createCoin);
 
 router
-  .route('/coins/coinid')
+  .route('/coins/:coinid')
+  .get(ctrlCoin.getSingleCoin)
   .put(ctrlCoin.updateCoin)
   .delete(ctrlCoin.deleteCoin);
 
@@ -25,10 +26,13 @@ router
 
 router
   .route('/plans')
+  .post(ctrlPlan.createPlan)
   .get(ctrlPlan.getAllPlans);
 
 router
-  .route('/plans/planid')
+  .route('/plans/:planid')
+  .put(ctrlPlan.updatePlan)
+  .delete(ctrlPlan.deletePlan)
   .get(ctrlPlan.getSinglePlan);
 
 router

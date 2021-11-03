@@ -1,5 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-
 export class Plan {
       _id: string;
     name: string;

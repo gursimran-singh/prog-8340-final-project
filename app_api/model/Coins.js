@@ -10,7 +10,7 @@ const coinsSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        maketCap:{
+        marketCap:{
             type:String,
             required:true
         },

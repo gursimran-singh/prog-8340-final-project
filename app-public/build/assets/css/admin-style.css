@@ -8355,3 +8355,6 @@ a.market_down {
   color: #E71D27 !important;
   cursor: pointer;
 }
+.ng-invalid{
+  border-color: red;
+}

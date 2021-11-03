@@ -83,9 +83,9 @@ const updateCoin = function (req, res) {
       } else {
         coinData.name = req.body.name,
           coinData.price = req.body.price,
-          coinData.marketCap = parseInt(req.body.marketCap),
-          coinData.volume = parseInt(req.body.volume),
-          coinData.quantity = parseInt(req.body.quantity),
+          coinData.marketCap = (req.body.marketCap),
+          coinData.volume = (req.body.volume),
+          coinData.quantity = (req.body.quantity),
           coinData.image = req.body.image,
           coinData.abbre = req.body.abbre,
           coinData.isFeatured = req.body.isFeatured,

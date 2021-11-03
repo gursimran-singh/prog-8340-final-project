@@ -4,20 +4,20 @@ export class coin {
     _id: string;
     name: string;
     price: string;
-    maketCap: string;
+    marketCap: string;
     volume: string;
     quantity: string;
     image: string;
     abbre: string;
     isFeatured:Boolean;
 
-    constructor(_id: string, name: string, price: string, maketCap: string, volume: string,
+    constructor(_id: string, name: string, price: string, marketCap: string, volume: string,
         quantity: string, image: string, abbre: string,isFeatured:Boolean
     ) {
         this._id = _id;
         this.name = name;
         this.price = price;
-        this.maketCap = maketCap;
+        this.marketCap = marketCap;
         this.volume = volume;
         this.quantity = quantity;
         this.image = image;

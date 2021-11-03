@@ -1,0 +1,32 @@
+<div class="d-flex controls">
+    <h2>Plans</h2>
+    <a class="btn btn-success" routerLink="/admin/plans/create">New</a>
+</div>
+<br/>
+<div class="market_display transactions">
+    <table>
+        <thead>
+            <tr>
+                <th class="text_left">#</th>
+                <th class="text_left">NAME</th>
+                <th class="text_left">PRICE</th>
+                <th width="30%">FEATURES</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plan of plans">
+                <td class="text_left" width="15%">
+                    <p>{{plan._id}}</p>
+                </td>
+                <td class="text_left"><p>{{plan.name}}</p></td>
+                <td class="text_left"><p>{{plan.price}}</p></td>
+                <td width="15%"><p>{{plan.features}}</p></td>
+                <td class="actions" width="10%">
+                    <a routerLink="update/{{plan._id}}" class="market_up"><i class="fa fa-edit"></i></a>
+                    <a (click)="deletePlan(plan._id, plan.name)" class="market_down"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

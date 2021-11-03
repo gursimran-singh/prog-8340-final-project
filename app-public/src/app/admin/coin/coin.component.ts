@@ -22,7 +22,7 @@ export class CoinComponent implements OnInit {
       this.coinService.deleteCoin(id).then(() => {
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         this.router.onSameUrlNavigation = 'reload';
-        this.router.navigate(['/admin/blogs']);
+        this.router.navigate(['/admin/coins']);
       });
     } else {
       return;

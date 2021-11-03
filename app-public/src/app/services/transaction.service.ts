@@ -19,6 +19,15 @@ export class TransactionService {
     .catch(this.handleError);
   }
 
+  getTransactions(): Promise<Transaction[]> {
+    return this.http
+      .get(this.transactionURl)
+      .toPromise()
+      .then((response) => {
+        return response as Transaction[];
+      });
+  }
+
 
   private handleError(error: any) {
     console.log(error.error);

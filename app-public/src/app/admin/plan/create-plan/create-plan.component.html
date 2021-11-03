@@ -1,0 +1,30 @@
+<div>
+    <div class="d-flex controls">
+        <h2>{{title}}</h2>
+        <a class="float-right btn btn-success" routerLink="/admin/plans">Back</a>
+    </div>
+    <br>
+    <br>
+    <div class="food-form">
+        <div class="card">
+            <div class="card-header bg-info"></div>
+            <div class="card-body col-sm-10 mx-auto">
+                <form method="post" [formGroup]="form">
+                    <div class="form-group"><label for="name">Name</label>
+                        <input class="form-control" type="text" formControlName="name" name="name" id="name" placeholder="Enter Title" required="">
+                    </div>
+                    <div class="form-group"><label for="price">Price</label>
+                        <input class="form-control" type="text" formControlName="price" name="price" id="price" placeholder="Price" required="">
+                    </div>
+                    <div class="form-group"><label for="features">Features</label>
+                        <textarea rows="5" cols="40" class="form-control" formControlName="features" name="features" id="features" required=""></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-danger" [disabled]="!form.valid" (click)="onSubmit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

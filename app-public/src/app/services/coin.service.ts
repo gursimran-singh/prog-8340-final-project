@@ -29,6 +29,13 @@ export class CoinService {
       });
   }
 
+  getSingleCoin(coinid: string): Promise<coin> {
+    return this.http
+      .get(this.coinURl + '/' + coinid)
+      .toPromise()
+      .then((response) => response as coin);
+  }
+
   createCoin(newCoin: coin): Promise<void | coin> {
     return this.http
       .post(this.coinURl, newCoin)
