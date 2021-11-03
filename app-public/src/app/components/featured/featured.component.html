@@ -3,7 +3,9 @@
     <div class="card_container">
         <div></div>
         
-        <div class="card bg_orange" *ngFor="let item of coins.slice(0, 4); let i = index" >
+        <div class="card bg_orange" *ngFor="let item of coins.slice(0, 4); let i = index " 
+             [ngClass]="{'bg_cyan': i === 1,'bg_dark': i === 2,'bg_red': i === 3}"
+        >
             <div class="card_inner">
                 <div class="d_flex">
                     <i class="cc BTC text_white crypto"></i>
